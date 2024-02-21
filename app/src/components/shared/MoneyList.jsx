@@ -19,7 +19,7 @@ const MoneyList = () => {
     { id: 15, amount: "$1000000" },
   ].reverse();
 
-  const [questionNumber, setQuestionNumber] = useState<number>(1);
+  const [questionNumber, setQuestionNumber] = useState(1);
 
   return (
     <ul className="moneyList">

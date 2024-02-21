@@ -1,15 +1,13 @@
-import React, { MouseEventHandler, useState } from 'react'
-import { FaMusic } from "react-icons/fa";
+import React from 'react'
 import { category } from '../../utils/category';
 import GamePlay from './GamePlay';
 
 
 const Catalog = () => {
-    const [category, setCategory] = useState(Number)
+    // const [category, setCategory] = useState()
 
     const chooseTopicHandler = () => {
         console.log(category)
-        setCategory(category)
     }
   return (
 
@@ -28,7 +26,7 @@ const Catalog = () => {
         <div className="thema politics"> <img src="/icons/politics.png" width={50} height={50} alt="politics" />Politics</div>
         <div className="thema animals"> <img src="/icons/animals.png" alt="animals" width={50} height={50} />Animals</div>
     </div>
-    {category != 0 ? <GamePlay category={category}/> : ''}
+    {/* {category != 0 ? <GamePlay category={category}/> : ''} */}
 </div>
 
   )
