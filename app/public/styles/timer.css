@@ -1,0 +1,19 @@
+.top{
+    height: 70%;
+    position: relative;
+}
+
+.timer{
+    border: 5px solid white;
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    display: flex;
+    font-size: 3em;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    position: absolute;
+    bottom: 0;
+    left: 20%;
+}

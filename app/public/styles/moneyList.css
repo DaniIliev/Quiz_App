@@ -1,0 +1,31 @@
+.moneyList{
+display: flex;
+flex-direction: column;
+gap: 5px;
+width: 80%;
+height: auto;
+
+}
+.moneyListItem{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border: solid black;
+    border-radius: 12px;
+    gap: 14px;
+    padding: 0.2em;
+}
+
+.moneyListItem.active{
+    background-color: rgb(41, 123, 96);
+}
+
+.moneyListItemNumber{
+    font-size: 1.2em;
+    font-weight: 100;
+}
+
+.moneyListItemAmount{
+    font-size:  1.5em;
+    font-size: 300;
+}

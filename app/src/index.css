@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Inter:wght@200;400;600&family=PT+Sans:wght@700&family=PT+Serif&family=Poppins:wght@400;800&display=swap');
+
+* {
+  font-family: "Fredoka", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.app {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(0, 0, 131);
+  color: white;
+  overflow: auto;
+}
+::-webkit-scrollbar-track {
+  background-color: blueviolet;
+  /* Handle */
+}
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+.main {
+  width: 75%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0), rgb(0, 0, 131)), url("/bg.jpg") center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+.pyramide {
+  width: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bottom{
+  height: 100%;
+}

@@ -1,0 +1,72 @@
+.catalogContent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.catalogTitle{
+    margin-top: 1em;
+    font-size: 2em;
+}
+
+.catalog{
+    padding: 2em 2em 3em 2em;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 20px;
+
+}
+
+.thema{
+    width: 40%;
+    height: 10em;
+    display: flex;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 1.5em;
+    justify-content: center;
+    align-items: center;
+}
+
+.thema.sport{
+    background-color: green;
+}
+
+.thema.books{
+    background-color: rgb(109, 67, 109);
+}
+
+.thema.films{
+    background-color: rgb(117, 99, 21);
+}
+.thema.music{
+    background-color: rgba(128, 0, 151, 0.813);
+}
+
+.thema.games{
+    background-color: rgba(219, 137, 43, 0.723);
+}
+.thema.generalKnowledge{
+    background-color: rgba(139, 25, 80, 0.723);
+}
+
+.thema.geography{
+    background-color: rgba(25, 139, 101, 0.723);
+}
+
+.thema.history{
+    background-color: rgba(86, 19, 50, 0.723);
+}
+.thema.politics{
+    background-color: rgba(20, 90, 96, 0.723);
+}
+.thema.politics{
+    background-color: rgba(20, 90, 96, 0.723);
+}
+.thema.animals{
+    background-color: rgba(74, 20, 96, 0.723);
+}
+
