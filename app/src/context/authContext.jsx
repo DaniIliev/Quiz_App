@@ -5,15 +5,18 @@ export const AuthContext = createContext()
 
 export const AuthProvider = ({children}) => {
     const [category, setCategory] = useState(Number)
+    const [questionNumber ,setQuestionNumber] = useState(0);
 
     const navigate = useNavigate()
 
     const contextValues = {
         category,
-        setCategory
+        setCategory,
+        questionNumber,
+        setQuestionNumber,
+
     }
-
-
+    
     return(
         <>
             <AuthContext.Provider value={contextValues}>
