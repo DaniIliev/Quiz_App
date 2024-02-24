@@ -1,0 +1,8 @@
+.navBar ul {
+    display: flex;
+    justify-content: space-between;
+}
+.profile{
+    display: flex;
+    align-items: center;
+}

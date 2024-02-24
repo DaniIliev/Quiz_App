@@ -3,6 +3,7 @@ import { category } from '../../utils/category';
 import GamePlay from './GamePlay';
 import { useAuthContext } from '../../context/authContext';
 import {Link, useNavigate} from 'react-router-dom'
+import NavBar from '../shared/NavBar';
 
 
 const Catalog = () => {
@@ -16,6 +17,7 @@ const Catalog = () => {
   return (
 
 <div className="catalogContent">
+    <NavBar />
     <h1 className='catalogTitle'>Choose one of the following topics</h1>
 
     <div className='catalog'>
