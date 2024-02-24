@@ -6,7 +6,7 @@ export const AuthContext = createContext()
 export const AuthProvider = ({children}) => {
     const [category, setCategory] = useState(Number)
     const [questionNumber ,setQuestionNumber] = useState(0);
-
+    // const [profit,setProfit] = useState('$0')
     const navigate = useNavigate()
 
     const contextValues = {
@@ -14,7 +14,8 @@ export const AuthProvider = ({children}) => {
         setCategory,
         questionNumber,
         setQuestionNumber,
-
+        // profit,
+        // setProfit
     }
     
     return(

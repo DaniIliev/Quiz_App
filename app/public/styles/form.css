@@ -1,0 +1,16 @@
+.loginRegisterForm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.submitBtnWrp{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.btnSubmit{
+    width: 100%;
+}

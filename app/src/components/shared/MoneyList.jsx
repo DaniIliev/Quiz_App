@@ -1,31 +1,33 @@
 import { useState } from "react";
 import { useAuthContext } from "../../context/authContext";
 
+export const moneyListArray = [
+  { id: 1, amount: "$100" },
+  { id: 2, amount: "$200" },
+  { id: 3, amount: "$300" },
+  { id: 4, amount: "$500" },
+  { id: 5, amount: "$1000" },
+  { id: 6, amount: "$2000" },
+  { id: 7, amount: "$4000" },
+  { id: 8, amount: "$8000" },
+  { id: 9, amount: "$16000" },
+  { id: 10, amount: "$32000" },
+  { id: 11, amount: "$64000" },
+  { id: 12, amount: "$124000" },
+  { id: 13, amount: "$250000" },
+  { id: 14, amount: "$500000" },
+  { id: 15, amount: "$1000000" },
+].reverse();
+
 const MoneyList = () => {
-  const moneyList = [
-    { id: 1, amount: "$100" },
-    { id: 2, amount: "$200" },
-    { id: 3, amount: "$300" },
-    { id: 4, amount: "$500" },
-    { id: 5, amount: "$1000" },
-    { id: 6, amount: "$2000" },
-    { id: 7, amount: "$4000" },
-    { id: 8, amount: "$8000" },
-    { id: 9, amount: "$16000" },
-    { id: 10, amount: "$32000" },
-    { id: 11, amount: "$64000" },
-    { id: 12, amount: "$124000" },
-    { id: 13, amount: "$250000" },
-    { id: 14, amount: "$500000" },
-    { id: 15, amount: "$1000000" },
-  ].reverse();
+
 
   const {questionNumber} = useAuthContext();
 
   return (
     <ul className="moneyList">
-      {moneyList.map((m) => (
-        <li key={m.id} className={questionNumber == m.id ? "moneyListItem active" : "moneyListItem"}>
+      {moneyListArray.map((m) => (
+        <li key={m.id} className={questionNumber+1 == m.id ? "moneyListItem active" : "moneyListItem"}>
           <span className="moneyListItemNumber">{m.id}</span>
           <span className="moneyListItemAmount">{m.amount}</span>
         </li>

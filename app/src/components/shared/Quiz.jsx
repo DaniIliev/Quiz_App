@@ -1,17 +1,23 @@
 import { useEffect, useState } from "react";
 import { useAuthContext } from "../../context/authContext";
+import { moneyListArray } from "./MoneyList";
+import useSound from 'use-sound'
+import fail from '../../assets/fail.wav'
 
-const Quiz = ({questions}) => {
+const Quiz = ({questions, stop, setStop,setProfit }) => {
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [answers, setAnswers] = useState([])
   const [className, setClassName] = useState(null)
 
   const {questionNumber, setQuestionNumber} = useAuthContext()
 
+  const [wrongAnswer] = useSound(fail) 
+
   useEffect(() => {
     setAnswers(questions[questionNumber+1]?.incorrect_answers.concat(questions[questionNumber+1]?.correct_answer))
   }, [questions, questionNumber])
 
+  
 const delay = (duration, callback) => {
   setTimeout(() => {
     callback()
@@ -27,7 +33,16 @@ const delay = (duration, callback) => {
 
     delay(6000, () => {
       if(correctAnswer){
+        setProfit(state => state = moneyListArray.filter(e => e.id == 2)[0].amount)
         setQuestionNumber(prev => prev+1)
+        setSelectedAnswer(null)
+      }else{
+        if(questionNumber != 0){
+          console.log(moneyListArray)
+          setProfit(state => state=`${moneyListArray.filter(e => e.id == 2)[0].amount}`)
+        }
+        wrongAnswer()
+        setStop(true)
       }
     })
   }
