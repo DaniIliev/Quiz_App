@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useAuthContext } from "../../context/authContext";
 
 const MoneyList = () => {
   const moneyList = [
@@ -19,7 +20,7 @@ const MoneyList = () => {
     { id: 15, amount: "$1000000" },
   ].reverse();
 
-  const [questionNumber, setQuestionNumber] = useState(1);
+  const {questionNumber} = useAuthContext();
 
   return (
     <ul className="moneyList">

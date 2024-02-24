@@ -9,7 +9,7 @@ const Quiz = ({questions}) => {
   const {questionNumber, setQuestionNumber} = useAuthContext()
 
   useEffect(() => {
-    setAnswers(questions[questionNumber]?.incorrect_answers.concat(questions[questionNumber]?.correct_answer))
+    setAnswers(questions[questionNumber+1]?.incorrect_answers.concat(questions[questionNumber+1]?.correct_answer))
   }, [questions, questionNumber])
 
 const delay = (duration, callback) => {
@@ -19,7 +19,7 @@ const delay = (duration, callback) => {
 }
 
   const handleClick = (a) => {
-    const correctAnswer = a == questions[questionNumber]?.correct_answer
+    const correctAnswer = a == questions[questionNumber+1]?.correct_answer
     setSelectedAnswer(a)
     setClassName('answer active')
 
@@ -33,7 +33,7 @@ const delay = (duration, callback) => {
   }
     return (
       <div className='quiz'>
-          <div className="question">{questions[questionNumber]?.question}</div>
+          <div className="question">{questions[questionNumber+1]?.question}</div>
           <div className="answers">
             {answers?.map((a) => (
               <div key={a} className={a == selectedAnswer ? className : 'answer'} onClick={() => handleClick(a)}>{a}</div>

@@ -7,31 +7,34 @@ import React from "react";
 import { useAuthContext } from "../../context/authContext";
 
 const GamePlay = () => {
-const {category} = useAuthContext()
-const [round, setRound] = useState('third')
+const {category, questionNumber, setQuestionNumber} = useAuthContext()
+
+const [round, setRound] = useState('first')
 const [questions, setQuestions] = useState([])
+const [stop, setStop] = useState(false)
+
 
   useEffect(() => {
     round == 'first' ? (
       api.getFirstFiveQuestions(category)
-      .then(res => console.log(res))
+      .then(res => setQuestions(res))
 
     ): round == 'second' ? (
       api.getSecondFiveQuestions(category)
-      .then(res => console.log(res))
+      .then(res => setQuestions(res))
     ):(
       api.getLastFiveQuestions(category)
-      .then(res => console.log(res))
+      .then(res => setQuestions(res))
     )
   },[round])
   return (
     <>
       <div className="main">
         <div className="top">
-          <Timer />
+          <Timer questionNumber={questionNumber} setStop={setStop}/>
         </div>
         <div className="bottom">
-          <Quiz />
+          <Quiz questions={questions}/>
         </div>
       </div>
       <div className="pyramide">
