@@ -54,13 +54,24 @@ export const AuthProvider = ({ children }) => {
     return result;
   };
 
+  const logout = () => {
+    try{
+        setAuth({})
+        navigate('/login')
+    }catch(error){
+        console.log(error)
+    }
+}
+
   const contextValues = {
     login,
     register,
+    logout,
     category,
     setCategory,
     questionNumber,
     setQuestionNumber,
+    isAuthenticated: !!auth.localId
     // profit,
     // setProfit
   };
