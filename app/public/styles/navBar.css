@@ -1,18 +1,20 @@
 .navBar{
-    width: 100%;
-    padding: 1em;
-}
+    width: 100vw;
+    padding: 0em;
+    background-color: rgb(26, 48, 133);
+} 
 .navBar ul {
     display: flex;
-    align-items: flex-start;
     gap: 25px;
+    align-items: center;
+    justify-content: end;
+    margin-right: 2em;
 }
 
-.navBar ul li {
-    display: block;
-    /* padding: 1em; */
-}
-.profile{
-    display: flex;
-    align-items: center;
+ .navBar ul li {
+    display: block; 
+}  
+
+.profile, .logout{
+    margin-top: 1em;
 }

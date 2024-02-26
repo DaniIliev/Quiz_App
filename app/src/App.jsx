@@ -3,9 +3,11 @@ import Catalog from "./components/pages/Catalog";
 import GamePlay from "./components/pages/GamePlay";
 import { AuthProvider } from "./context/authContext";
 import Login from "./components/pages/Login";
+import NavBar from "./components/shared/NavBar";
 import Register from "./components/pages/Register";
 import AuthGuard from "./guards/AuthGuard";
 import GuestGuard from "./guards/GuestGuard";
+
 function App() {
   return (
     <>

@@ -7,8 +7,8 @@ const NavBar = () => {
   return (
     <nav className='navBar'>
         <ul>
-            <li><img src="/icons/user-solid.svg" alt="userIcon" width={30} height={30} className='profile'/> Profile</li>
-            <li onClick={logout}><img src="/icons/logout.svg" width={35} height={35} alt="logout" /></li>
+            <li><img src="/icons/user-solid.svg" alt="userIcon" width={30} height={30} className='profile'/></li>
+            <li onClick={logout}><img src="/icons/logout.svg" width={30} height={30}  className='logout' alt="logout" /></li>
         </ul>
     </nav>
   )

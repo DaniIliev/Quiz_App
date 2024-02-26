@@ -17,7 +17,7 @@ const Catalog = () => {
   return (
 
 <div className="catalogContent">
-    <NavBar />
+    <NavBar /> 
     <h1 className='catalogTitle'>Choose one of the following topics</h1>
 
     <div className='catalog'>

@@ -62,3 +62,14 @@
   width: 80%;
   margin: 0 auto;
 }
+
+.buttons{
+  margin-top: 1.5em;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.btn{
+  padding: 1em 1.5em 1em 1.5em;
+}
