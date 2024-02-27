@@ -7,14 +7,24 @@
     display: flex;
     gap: 25px;
     align-items: center;
-    justify-content: end;
+    justify-content: space-between;
     margin-right: 2em;
 }
 
+.profileAndProfit{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
  .navBar ul li {
-    display: block; 
+    /* display: block;  */
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    
 }  
 
-.profile, .logout{
+.profile, .logout, .profit, .ranking{
     margin-top: 1em;
 }

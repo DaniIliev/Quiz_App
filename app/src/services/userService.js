@@ -38,8 +38,8 @@ import { envirenment } from "../envirenment/envirenment"
 export const patch = async (localId, values) => {
     let profit = Number(values.slice(1))
 
-    const allUsers = await getAllUsers()
-    const user = allUsers.filter(u => u.localId == localId)
+    
+    const user = await findOneById(localId)
 
     if(user[0].profit != undefined){
        profit+= Number(user[0].profit)
@@ -99,4 +99,13 @@ export const getAllUsers = async () => {
     } catch (error) {
         console.log(error)
     }
+}
+
+export const findOneById = async (localId) => {
+    console.log(localId)
+    const allUsers = await getAllUsers()
+    console.log(allUsers)
+    const user = allUsers.filter(u => u.localId == localId)
+    console.log(user)
+    return user
 }
