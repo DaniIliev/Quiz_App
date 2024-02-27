@@ -35,23 +35,36 @@ import { envirenment } from "../envirenment/envirenment"
 // }
 
 
-export const patch = async (id, values) => {
-    const responce = await fetch(`https://quizz-app-1abc5-default-rtdb.firebaseio.com/user/${id}.json`,{
+export const patch = async (localId, values) => {
+    let profit = Number(values.slice(1))
+
+    const allUsers = await getAllUsers()
+    const user = allUsers.filter(u => u.localId == localId)
+
+    if(user[0].profit != undefined){
+       profit+= Number(user[0].profit)
+    }
+
+    const data = {
+        profit:profit
+    }
+
+    const responce = await fetch(`https://quizz-app-1abc5-default-rtdb.firebaseio.com/user/${user[0].id}.json`,{
         method: 'PATCH',
         headers: {
             'Content-Type': 'application.json'
         },
-        body: JSON.stringify(values)
+        body: JSON.stringify(data)
     })
     const result = await responce.json()
 
-    console.log(result)
     return result
 }
 
-export const createUserProfile = async(user) => {
+export const createUserProfile = async(user, localId) => {
     const data = {
         username: user.username,
+        localId: localId,
     }
     try {
         const createdUser = await fetch(`https://quizz-app-1abc5-default-rtdb.firebaseio.com/user.json`, {
@@ -62,6 +75,27 @@ export const createUserProfile = async(user) => {
             body: JSON.stringify(data)
         })
         return createdUser
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+export const getAllUsers = async () => {
+    try {
+        const users = await fetch(`https://quizz-app-1abc5-default-rtdb.firebaseio.com/user.json`)
+        const usersList = await users.json()
+
+        const result = []
+
+        for (let i = 0; i < Object.values(usersList).length; i++) {
+
+            result.push({
+              id: Object.keys(usersList)[i],
+              ...Object.values(usersList)[i],
+            });
+          }
+
+          return result
     } catch (error) {
         console.log(error)
     }

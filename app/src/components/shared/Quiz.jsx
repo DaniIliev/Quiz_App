@@ -1,22 +1,24 @@
 import { useEffect, useState } from "react";
 import { useAuthContext } from "../../context/authContext";
 import { moneyListArray } from "./MoneyList";
+import * as userService from '../../services/userService'
 import useSound from 'use-sound'
 import correct from '../../assets/correct.wav'
 import fail from '../../assets/fail.wav'
 
-const Quiz = ({questions, setStop,setProfit, setFreezeTime}) => {
+const Quiz = ({questions, setStop, profit ,setProfit, setFreezeTime}) => {
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [answers, setAnswers] = useState([])
   const [className, setClassName] = useState(null)
 
-  const {questionNumber, setQuestionNumber} = useAuthContext()
+  const {questionNumber, setQuestionNumber, auth} = useAuthContext()
 
   const [wrongAnswer] = useSound(fail) 
   const [Anscorrect] = useSound(correct) 
 
 
   useEffect(() => {
+    console.log(questionNumber)
     setAnswers(questions[questionNumber+1]?.incorrect_answers.concat(questions[questionNumber+1]?.correct_answer))
   }, [questions, questionNumber])
 
@@ -39,18 +41,25 @@ const delay = (duration, callback) => {
       if(correctAnswer){
         Anscorrect()
         delay(1000, () => {
-          setProfit(state => state = moneyListArray.filter(e => e.id == 2)[0].amount)
+          setProfit(state => state = moneyListArray.filter(e => e.id == questionNumber+1)[0].amount)
           setQuestionNumber(prev => prev+1)
           setSelectedAnswer(null)
+          setFreezeTime(false)
         })
       }else{
         if(questionNumber != 0){
-          setProfit(state => state=`${moneyListArray.filter(e => e.id == 2)[0].amount}`)
+          setProfit(state => state=`${moneyListArray.filter(e => e.id == questionNumber)[0].amount}`)
         }
         wrongAnswer()
         delay(2000, () => {
           setStop(true)
+          setQuestionNumber(0)
         })
+
+        if(profit != '$0'){
+          console.log(profit)
+          userService.patch(auth.localId, profit)
+        }
       }
     })
   }

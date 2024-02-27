@@ -2,7 +2,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 import { envirenment } from "../envirenment/envirenment"
-
+import { createUserProfile } from "../services/userService";
 
 export const AuthContext = createContext();
 
@@ -27,13 +27,13 @@ export const AuthProvider = ({ children }) => {
         }
       );
       const result = await responce.json();
-      await createUserProfile(user);
+
+      await createUserProfile(user, result.localId);
 
       setAuth({ email: result.email, localId: result.localId });
       return result;
     } catch (error) {
       console.log(error);
-      return result;
     }
   };
 
@@ -50,6 +50,7 @@ export const AuthProvider = ({ children }) => {
     );
 
     const result = await responce.json();
+
     setAuth({ email: result.email, localId: result.localId });
     return result;
   };
@@ -71,9 +72,8 @@ export const AuthProvider = ({ children }) => {
     setCategory,
     questionNumber,
     setQuestionNumber,
+    auth,
     isAuthenticated: !!auth.localId
-    // profit,
-    // setProfit
   };
 
   return (

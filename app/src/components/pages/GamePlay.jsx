@@ -41,7 +41,7 @@ const GamePlay = () => {
               <Timer questionNumber={questionNumber} setStop={setStop} freezeTime={freezeTime}/>
             </div>
             <div className="bottom">
-              <Quiz questions={questions} stop={stop} setStop={setStop} setProfit={setProfit} setFreezeTime={setFreezeTime}/>
+              <Quiz questions={questions} stop={stop} setStop={setStop} profit={profit} setProfit={setProfit} setFreezeTime={setFreezeTime}/>
             </div>
           </>
         )}
