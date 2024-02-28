@@ -6,6 +6,7 @@ import Login from "./components/pages/Login";
 import Register from "./components/pages/Register";
 import AuthGuard from "./guards/AuthGuard";
 import GuestGuard from "./guards/GuestGuard";
+import AllUsers from "./components/pages/AllUsers";
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
             <Route element={<AuthGuard/>}>
                 <Route path="/catalog"  element={<Catalog />} />
                 <Route path="/game-play" element={<GamePlay />} />
-                {/* <Route path="/profile/:localId" element={<UserProfile/>}/> */}
+                <Route path="/all-users" element={<AllUsers/>}/>
             </Route>
           </Routes>
         </div>

@@ -25,6 +25,20 @@
     
 }  
 
-.profile, .logout, .profit, .ranking{
+.profile, .logout, .profit, .ranking, .playBtn{
     margin-top: 1em;
+}
+.ranking{
+    cursor: pointer;
+}
+
+.playBtn{
+    border: 2px solid black;
+    padding: 0.3em 1em;
+    border-radius: 12px;
+    background-color: rgb(145, 50, 234);
+}
+
+.playBtn:hover{
+    background-color: rgb(82, 28, 133);
 }
