@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate} from "react-router-dom";
 import Catalog from "./components/pages/Catalog";
 import GamePlay from "./components/pages/GamePlay";
 import { AuthProvider } from "./context/authContext";
@@ -23,6 +23,7 @@ function App() {
                 <Route path="/catalog"  element={<Catalog />} />
                 <Route path="/game-play" element={<GamePlay />} />
                 <Route path="/all-users" element={<AllUsers/>}/>
+                <Route path="*" element={<Navigate to="/catalog" replace />} />
             </Route>
           </Routes>
         </div>
