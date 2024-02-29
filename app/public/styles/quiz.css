@@ -5,16 +5,20 @@
     justify-content: center;
     align-items: center;
 }
+.pyramide {
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
 .question{
     width: 60%;
     text-align: center;
-    /* border: 2px solid rgb(0, 13, 56); */
     border: 2px solid white;
     padding: 0.7em 0 0.7em 0;
     border-radius: 16px;
     font-size: 1.4em;
-    /* backdrop-filter: blur(16px); */
     background: linear-gradient(rgb(55, 5, 154), black);
     margin-bottom: 3em;
 
@@ -80,3 +84,62 @@
         background: crimson;
     }
 }
+@media screen and (max-width: 1000px) {
+
+    .moneyListItemNumber{
+        font-size: 1.2em;
+    }
+    .moneyListItemAmount{
+        font-size: 1em;
+    }
+    .moneyListItem{
+        width: 100%;
+    }
+    .moneyList{
+        display: flex;
+        align-items: center;
+        height: 100vh;
+        gap: 0px;
+        justify-content: space-evenly;
+        width: 100%;
+    } 
+
+}
+
+@media screen and (max-width: 600px) {
+    .pyramide{
+        width: 28%;
+        justify-content: start;
+    }
+    .question {
+        font-size: 1em;
+        padding: 1em;
+        width: 80%;
+    }
+    .moneyList{
+        display: flex;
+        align-items: center;
+        height: 100vh;
+        gap: 0px;
+        justify-content: space-evenly;
+    }
+    .answer{
+        font-size: 1em;
+        height: 50px;
+        width: 200px;
+        text-align: center;
+        padding: 0.5em;
+    }
+    .moneyListItemNumber{
+        font-size: 1em;
+    }
+    .moneyListItemAmount{
+        font-size: 0.8em;
+    }
+    .answers{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-bottom: 1em;
+    }
+  }

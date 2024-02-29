@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import {useLocation} from 'react-router-dom';
 import { useAuthContext } from "../../context/authContext";
 import { moneyListArray } from "./MoneyList";
 import * as userService from '../../services/userService'
@@ -7,6 +8,7 @@ import correct from '../../assets/correct.wav'
 import fail from '../../assets/fail.wav'
 
 const Quiz = ({questions, setStop, profit ,setProfit, setFreezeTime}) => {
+  
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [answers, setAnswers] = useState([])
   const [className, setClassName] = useState(null)

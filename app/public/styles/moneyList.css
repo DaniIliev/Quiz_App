@@ -3,7 +3,8 @@ display: flex;
 flex-direction: column;
 gap: 5px;
 width: 80%;
-height: auto;
+height: 100vh;
+justify-content: space-evenly;
 
 }
 .moneyListItem{

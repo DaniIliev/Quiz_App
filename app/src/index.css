@@ -9,6 +9,10 @@
   box-sizing: border-box;
 }
 
+ul{
+  margin: 0;
+}
+
 .app {
   height: 100vh;
   display: flex;
@@ -41,12 +45,12 @@
   gap: 20px;
 }
 
-.pyramide {
+/* .pyramide {
   width: 25%;
   display: flex;
   align-items: center;
   justify-content: center;
-}
+} */
 
 .bottom{
   height: 100%;
@@ -72,4 +76,44 @@
 
 .btn{
   padding: 1em 1.5em 1em 1.5em;
+}
+
+
+
+@media screen and (max-width: 800px) {
+  .loginRegisterForm img{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .stopGameH1{
+    font-size: 1em;
+  }
+  .btn{
+    padding: 0.3em 0.5em;
+    font-size: 0.8em;
+  }
+  .navBar ul li{
+    font-size: 0.8em;
+  }
+  .catalogTitle{  
+      font-size: 1.5em;
+      text-align: center;
+  }
+  .thema {
+      height: 7em;
+      text-align: center;
+      font-size: 1em;
+  }
+}
+
+@media screen and (max-width: 397px) {
+  .ranking{
+      display: none;
+  }
+  .catalogTitle{
+      font-size: 1.3em;
+      text-align: center;
+  }
 }

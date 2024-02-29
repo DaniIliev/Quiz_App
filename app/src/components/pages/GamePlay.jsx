@@ -8,7 +8,7 @@ import { useAuthContext } from "../../context/authContext";
 import { Link } from "react-router-dom";
 
 const GamePlay = () => {
-  const { category, questionNumber, setQuestionNumber } = useAuthContext();
+  const { category, questionNumber } = useAuthContext();
 
   const [freezeTime, setFreezeTime] = useState(false) 
   const [newGame, setNewGame] = useState(false)

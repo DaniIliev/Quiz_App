@@ -11,7 +11,12 @@
     margin-right: 2em;
 }
 
+.rankingMobile{
+    display: none;
+}
+
 .profileAndProfit{
+    /* margin-left: 1em; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -28,7 +33,7 @@
 .profile, .logout, .profit, .ranking, .playBtn{
     margin-top: 1em;
 }
-.ranking{
+.ranking, .logoutImg{
     cursor: pointer;
 }
 
@@ -41,4 +46,14 @@
 
 .playBtn:hover{
     background-color: rgb(82, 28, 133);
+}
+
+@media screen and (max-width: 400px) {
+    .rankingMobile {
+        display: inline-block;
+    }
+
+    .ranking{
+        display: none;
+    }
 }

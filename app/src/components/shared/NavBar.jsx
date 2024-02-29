@@ -16,12 +16,13 @@ const NavBar = ({showButtonPlay}) => {
     <nav className='navBar'>
         <ul>
             <div className='profileAndProfit'>
-                <li className='profile'><img src="/icons/name1.png" alt="userIcon" width={30} height={30}  onClick={() => navigate(`/profile/${auth.localId}`)}/>{userDetails[0]?.username}</li>
+                <li className='profile'><img src="/icons/name1.png" alt="userIcon" width={30} height={30}/>{userDetails[0]?.username}</li>
                 <li className='profit'><img src="/icons/dollar.png" alt="" width={30} height={30} />{userDetails[0]?.profit}</li>
             </div>
             {showButtonPlay && <li onClick={() => navigate('/catalog')} className='playBtn'>Play</li>}
             <li className='ranking' onClick={() => navigate('/all-users')}><img src="/icons/world.png" alt="" width={30} height={30} />World ranking</li>
-            <li className='logout' onClick={logout}><img src="/icons/exit.png" width={60} height={60}   alt="logout"  /></li>
+            <li className='rankingMobile' onClick={() => navigate('/all-users')}><img src="/icons/world.png" alt="" width={30} height={30} /></li>
+            <li className='logout' onClick={logout}><img src="/icons/exit.png" width={60} height={60} className='logoutImg' alt="logout"  /></li>
         </ul>
     </nav>
   )
