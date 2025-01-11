@@ -24,3 +24,8 @@ This is a quiz game inspired by the famous "Who Wants to Be a Millionaire?" form
 3. **Answer questions:** Correct answers earn you money!
 4. **Win the big prize!** Answer all 15 questions correctly to win 1,000,000.
 
+## Screenshots
+
+![Game Screenshot 1](/images/scr1.png)
+![Game Screenshot 2](/images/scr2.png)
+
