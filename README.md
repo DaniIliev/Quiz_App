@@ -26,6 +26,6 @@ This is a quiz game inspired by the famous "Who Wants to Be a Millionaire?" form
 
 ## Screenshots
 
-![Game Screenshot 1](/images/scr1.png)
-![Game Screenshot 2](/images/scr2.png)
+![Game Screenshot 1](/public/images/scr1.png)
+![Game Screenshot 2](public/images/scr2.png)
 
